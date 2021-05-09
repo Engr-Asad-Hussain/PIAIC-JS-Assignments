@@ -1,19 +1,14 @@
-// const userInput = prompt("Enter string: ");
-const userInput = "There is a yard near my hotel";
-
+const userInput = prompt("Enter string: ");
 console.log("Input string: ", userInput);
-// console.log("to LowerCase: ", userInput.toLowerCase());
-// console.log("to UpperCase: ", userInput.toUpperCase());
 
 
-var count = 0;
-var replaceText = "";
-for (i=0; i<userInput.length; i++) {
-    // search spaces
-    if (userInput.slice(i, i+1) === " ") {
-        replaceText = userInput.replace(/ /g, "  ");
-        count++;
-    }
+let replaceText = userInput.toLowerCase().split(" ");
+let subStr = "";
+
+
+for (i=0; i<replaceText.length; i++) {
+    subStr = subStr + replaceText[i].charAt(0).toUpperCase() + replaceText[i].slice(1) + " ";
 }
-console.log("Spaces Found: ", count);
-console.log(replaceText);
+
+console.log("subStr: ", subStr);
+
